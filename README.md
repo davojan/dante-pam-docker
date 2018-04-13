@@ -8,7 +8,7 @@ Dockerized Lozy's danted with pam authentication
 touch /etc/sockd.passwd
 
 docker run -d --name dante --restart always \
-  -p 27637:1080 \
+  -p 1080:1080 \
   -v /etc/sockd.passwd:/etc/danted/sockd.passwd \
   davojan/dante-pam
 ```
@@ -20,6 +20,9 @@ htpasswd -bd /etc/sockd.passwd user password
 ```
 
 Unfortunately this PAM config supports only CRYPT encryption of the password, so effectively only 8 characters will be used.
+
+Container restart is not necessary after modifying the passwd-file.
+
 
 ## Credits
 
