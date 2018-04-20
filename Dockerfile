@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -y wget && \
 ADD entrypoint.sh /
 ADD sockd.conf /etc/danted/
 
-EXPOSE 1080
+EXPOSE 1080 1080/udp
 
 ENTRYPOINT [ "/entrypoint.sh" ]

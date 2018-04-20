@@ -8,7 +8,7 @@ Dockerized Lozy's danted with pam authentication
 touch /etc/sockd.passwd
 
 docker run -d --name dante --restart always \
-  -p 1080:1080 \
+  -p 1080:1080 -p 1080:1080/udp \
   -v /etc/sockd.passwd:/etc/danted/sockd.passwd \
   davojan/dante-pam
 ```
